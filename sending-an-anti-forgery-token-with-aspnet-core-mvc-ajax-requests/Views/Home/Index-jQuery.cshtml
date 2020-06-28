@@ -1,0 +1,56 @@
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+
+@functions
+{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+
+<h1>Anti-forgery token with ASP.NET Core MVC AJAX requests</h1>
+
+<button onclick="submitData()">Submit data</button>
+<button onclick="submitJsonData()">Submit JSON data</button>
+
+@section Scripts {
+    <script>
+        function submitData() {
+
+            const person = { firstname: "John", lastname: "Doe" };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("PostAjaxData")",
+                headers: { "RequestVerificationToken": "@GetAntiXsrfRequestToken()" },
+                data: person,
+                success: function (data) {
+                    console.log(data.id);
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+        }
+
+        function submitJsonData() {
+
+            const person = { firstname: "John", lastname: "Doe" };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("PostAjaxJson")",
+                headers: { "RequestVerificationToken": "@GetAntiXsrfRequestToken()" },
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(person),
+                success: function (data) {
+                    console.log(data.id)
+                },
+                error: function (req, status, error) {
+                    alert(error);
+                }
+            });
+        }
+    </script>
+}

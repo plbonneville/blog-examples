@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendingAntiForgeryTokenWithAspnetCoreMvcAjaxRequests", "SendingAntiForgeryTokenWithAspnetCoreMvcAjaxRequests.csproj", "{B544CA17-CE34-4213-B394-7AA1FF47E35C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B544CA17-CE34-4213-B394-7AA1FF47E35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B544CA17-CE34-4213-B394-7AA1FF47E35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B544CA17-CE34-4213-B394-7AA1FF47E35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B544CA17-CE34-4213-B394-7AA1FF47E35C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62426A34-83F2-4943-89F2-18509C155459}
+	EndGlobalSection
+EndGlobal
