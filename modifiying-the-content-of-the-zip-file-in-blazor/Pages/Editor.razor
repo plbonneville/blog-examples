@@ -1,0 +1,8 @@
+﻿@page "/web-editor/{*filename}"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<div>
+    <div class="form-group">
+        <MonacoEditor @ref="_editor" Id="exampleFormControlTextarea1" ConstructionOptions="EditorConstructionOptions" OnDidInit="EditorOnDidInit" OnDidChangeModelContent="EditorOnDidChangeModelContent " />
+    </div>
+</div>

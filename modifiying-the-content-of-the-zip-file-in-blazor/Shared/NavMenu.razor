@@ -1,0 +1,30 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">BlazorZipExplorer</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+
+        @if (ZipFileState.Value.ZipEntries != null)
+        {
+            @foreach (var item in ZipFileState.Value.ZipEntries)
+            {
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="@{ $"web-editor/{item.Value.Name}" }" Match="NavLinkMatch.All">
+                        <span class="oi oi-code" aria-hidden="true"></span> @item.Value.Name.Split('/').Last()
+                    </NavLink>
+                </li>
+            }
+        }
+    </ul>
+</div>

@@ -1,0 +1,9 @@
+﻿@page "/"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<h1>Hello, world!</h1>
+
+<div class="drag-drop-zone">
+    <InputFile OnChange="OnInputFileChange" accept=".zip" />
+    @_status
+</div>
