@@ -51,13 +51,13 @@ namespace ConsoleAppWasm.Store.CSharpCompilationUseCase
         }
 
         [ReducerMethod]
-        public static CSharpCompilationState ReduceRunAction(CSharpCompilationState state, RunResultAction action)
+        public static CSharpCompilationState ReduceRunResultAction(CSharpCompilationState state, RunResultAction action)
         {
             return new CSharpCompilationState { IsRunning = false, CompilationLogs = action.CompilationLogs, Output = action.Output };
         }
 
         [ReducerMethod]
-        public static CSharpCompilationState ReduceRunAction(CSharpCompilationState state, LoadAssembliesAction action)
+        public static CSharpCompilationState ReduceLoadAssembliesAction(CSharpCompilationState state, LoadAssembliesAction action)
         {
             return new CSharpCompilationState { IsRunning = false };
         }
@@ -73,7 +73,7 @@ namespace ConsoleAppWasm.Store.CSharpCompilationUseCase
         }
 
         [EffectMethod]
-        public async Task HandleUploadZipFileAction(RunAction action, IDispatcher dispatcher)
+        public async Task HandleRunActionAction(RunAction action, IDispatcher dispatcher)
         {
             var resultAction = new RunResultAction { };
 
@@ -105,7 +105,7 @@ namespace ConsoleAppWasm.Store.CSharpCompilationUseCase
         }
 
         [EffectMethod]
-        public async Task HandleUploadZipFileAction(LoadAssembliesAction action, IDispatcher dispatcher)
+        public async Task HandleLoadAssembliesAction(LoadAssembliesAction action, IDispatcher dispatcher)
         {
             await _compilerService.Init();
         }
