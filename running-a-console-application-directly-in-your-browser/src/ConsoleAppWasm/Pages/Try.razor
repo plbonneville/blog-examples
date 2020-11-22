@@ -1,0 +1,32 @@
+﻿@page "/try"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<h3>Try</h3>
+
+@if (CSharpCompilationState.Value.IsRunning)
+{
+    <button type="button" class="btn btn-secondary">
+        <div class="spinner-border spinner-border-sm" role="status">
+            <span class="sr-only">Running...</span>
+        </div>
+        Run
+    </button>
+}
+else
+{
+    <button type="button" class="btn btn-primary" @onclick="Run">
+        <span class="oi oi-media-play"></span>
+        Run
+    </button>
+}
+
+<div class="card">
+    <div class="card-body">
+        <pre>@CSharpCompilationState.Value.Output</pre>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <pre>@CSharpCompilationState.Value.CompilationLogs</pre>
+    </div>
+</div>

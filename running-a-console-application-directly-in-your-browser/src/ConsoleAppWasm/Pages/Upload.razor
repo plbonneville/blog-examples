@@ -1,0 +1,9 @@
+﻿@page "/upload"
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+<h3>Upload</h3>
+
+<div class="drag-drop-zone">
+    <InputFile OnChange="OnInputFileChange" accept=".zip" />
+    @DefaultStatus
+</div>

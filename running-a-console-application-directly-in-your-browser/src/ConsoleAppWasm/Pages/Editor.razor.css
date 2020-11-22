@@ -1,0 +1,15 @@
+﻿.monaco-editor-container {
+    height: 400px !important;
+    border: 1px solid gray;
+}
+
+.decorationGlyphMarginClass {
+    background: red;
+}
+
+.decorationContentClass {
+    background: lightblue;
+}
+
+.my-editor-class {
+}

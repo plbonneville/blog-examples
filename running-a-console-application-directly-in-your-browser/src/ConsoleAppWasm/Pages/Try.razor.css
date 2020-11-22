@@ -1,0 +1,12 @@
+﻿pre {
+    /*background-color: #f0f0f0;*/
+    background-color: #393939;
+    color: #fff;
+    overflow: auto;
+    padding: 1rem;
+    height: 16rem;
+}
+
+.card {
+    margin-top: 1rem;
+}
