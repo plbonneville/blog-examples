@@ -28,6 +28,7 @@ namespace SendingAntiForgeryTokenWithAspnetCoreMvcAjaxRequests.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Consumes("application/x-www-form-urlencoded")]
         public IActionResult PostAjaxData(PersonViewModel personViewModel)
         {
             // Todo: Save person to database
@@ -35,7 +36,8 @@ namespace SendingAntiForgeryTokenWithAspnetCoreMvcAjaxRequests.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]       
+        //[Consumes("application/json")]
         public IActionResult PostAjaxJson([FromBody] PersonViewModel personViewModel)
         {
             // Todo: Save person to database
