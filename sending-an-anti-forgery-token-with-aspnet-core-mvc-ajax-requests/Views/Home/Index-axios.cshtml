@@ -10,30 +10,12 @@
 
 <h1>Anti-forgery token with ASP.NET Core MVC AJAX requests</h1>
 
-<button onclick="submitData()">Submit data</button>
 <button onclick="submitJsonData()">Submit JSON data</button>
 
 @section Scripts {
     <script src="~/lib/axios/dist/axios.min.js"></script>
 
     <script>
-        function submitData() {
-
-            const person = { firstname: "John", lastname: "Doe" };
-
-            axios({
-                method: "POST",
-                url: "@Url.Action("PostAjaxData")",
-                data: person,
-                headers: { "RequestVerificationToken": "@GetAntiXsrfRequestToken()" }
-            })
-            .then((response) => {
-                console.log(response.data.id);
-            }, (error) => {
-                console.log(error);
-            });
-        }
-
         function submitJsonData() {
 
             const person = { firstname: "John", lastname: "Doe" };
