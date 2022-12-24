@@ -20,7 +20,7 @@
     },
     {
       "provider": "unpkg",
-      "library": "bootstrap@4.6.2",
+      "library": "bootstrap@5.2.3",
       "destination": "wwwroot/lib/bootstrap/"
     }
   ]
