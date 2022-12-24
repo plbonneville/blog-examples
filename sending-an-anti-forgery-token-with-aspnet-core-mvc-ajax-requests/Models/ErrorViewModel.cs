@@ -1,5 +1,3 @@
-using System;
-
 namespace SendingAntiForgeryTokenWithAspnetCoreMvcAjaxRequests.Models
 {
     public class ErrorViewModel
